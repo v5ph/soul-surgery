@@ -1,5 +1,8 @@
 ccxt
 pandas
 python-dotenv
-requests
+aiohttp
 pandas_ta
+numpy
+pyyaml
+yfinance

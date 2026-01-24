@@ -1,0 +1,46 @@
+system:
+  update_interval: 60
+  log_level: "INFO"
+
+bots:
+  # CRYPTO BOTS (use format: SYMBOL/USDT)
+  - id: "btc_rsi_bot"
+    pair: "BTC/USDT"
+    timeframe: "1h"
+    strategy: "rsi_mean_reversion"
+    params:
+      period: 14
+      overbought: 70
+      oversold: 30
+      alert_cooldown: 3600  # Don't repeat same signal within 1 hour
+
+  - id: "eth_scalp_bot"
+    pair: "ETH/USDT"
+    timeframe: "15m"
+    strategy: "rsi_mean_reversion"
+    params:
+      period: 14
+      overbought: 75
+      oversold: 25
+      alert_cooldown: 1800  # Don't repeat same signal within 30 min
+
+  # STOCK/EQUITY BOTS (use ticker symbols without slash)
+  - id: "aapl_stock_bot"
+    pair: "AAPL"           # Apple stock
+    timeframe: "1h"
+    strategy: "rsi_mean_reversion"
+    params:
+      period: 14
+      overbought: 70
+      oversold: 30
+      alert_cooldown: 3600
+  
+  - id: "spy_etf_bot"
+    pair: "SPY"            # S&P 500 ETF
+    timeframe: "1d"
+    strategy: "rsi_mean_reversion"
+    params:
+      period: 14
+      overbought: 70
+      oversold: 30
+      alert_cooldown: 86400  # 24 hours for daily timeframe
